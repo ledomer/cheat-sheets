@@ -1,7 +1,14 @@
 
 **[<<Оглавление](../../TableOfContents.md)**
 
-LLM Studio, Ollama позволя.n работать с локальными языковыми моделями через API.
+LLM Studio, Ollama позволяет работать с локальными языковыми моделями через API.
+
+GUI для Ollama:
+[ollama-gui](https://chyok.github.io/ollama-gui/)
+```bash
+pip install ollama-gui
+ollama-gui
+```
 
 ### **1. Установка и запуск локальной модели**  
 Перед использованием API убедитесь, что у вас:  
@@ -93,3 +100,5 @@ response = requests.post(url, json=payload, headers=headers)
 3. Отправляйте запросы без токена (или с фиктивным, если требуется).  
 
 Если вы используете конкретный инструмент (например, **Ollama, LM Studio, TGI**), уточните его API-документацию.
+
+**[<<Оглавление](../../TableOfContents.md)**

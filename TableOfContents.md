@@ -9,4 +9,4 @@
       2. [Как подключить ](other/docker/DockerVSCode.md)
    4. **LLM**
       1. [Приложения, поддерживающие API](other/LLM/LLMWithApi.md)
-      2. 
+      2. [Изменение порта по умолчанию Ollama](other/LLM/ChangePortOllamaAPI.md)

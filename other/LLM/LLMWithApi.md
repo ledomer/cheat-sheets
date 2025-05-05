@@ -1,7 +1,8 @@
+### Приложения для локального использования LLM
 
 **[<<Оглавление](../../TableOfContents.md)**
 
-LLM Studio, Ollama позволяет работать с локальными языковыми моделями через API.
+[Официальная документация Ollama](https://hub.docker.com/r/ollama/ollama)
 
 GUI для Ollama:
 [ollama-gui](https://chyok.github.io/ollama-gui/)
@@ -10,17 +11,17 @@ pip install ollama-gui
 ollama-gui
 ```
 
-### **1. Установка и запуск локальной модели**  
+#### **1. Установка и запуск локальной модели**  
 Перед использованием API убедитесь, что у вас:  
 - Локальная LLM (например, **Llama 3, Mistral, Phi-3, Gemma**) загружена и запущена через **Ollama, LM Studio, Text Generation Inference (TGI), vLLM** или аналогичный инструмент.  
 - Сервер API доступен (обычно `http://localhost:PORT`).  
 
-#### **Пример с LM Studio**  
+##### **Пример с LM Studio**  
 1. Скачайте [LM Studio](https://lmstudio.ai/) и загрузите нужную GGUF-модель.  
 2. Запустите встроенный сервер (в настройках включите **"Local Server"**).  
    - По умолчанию API доступен на `http://localhost:1234/v1/completions`.  
 
-#### **Пример с Ollama**  
+##### **Пример с Ollama**  
 1. Установите [Ollama](https://ollama.ai/) и скачайте модель:  
    ```bash
    ollama pull llama3
@@ -30,10 +31,10 @@ ollama-gui
 
 ---  
 
-### **2. Отправка запроса через API (без токена)**  
+#### **2. Отправка запроса через API (без токена)**  
 Если сервер локальный, аутентификация обычно не требуется. Примеры запросов:  
 
-#### **Через `curl`**  
+##### **Через `curl`**  
 ```bash
 curl -X POST "http://localhost:1234/v1/completions" \
 -H "Content-Type: application/json" \
@@ -44,7 +45,7 @@ curl -X POST "http://localhost:1234/v1/completions" \
 }'
 ```
 
-#### **Через Python (`requests`)**  
+##### **Через Python (`requests`)**  
 ```python
 import requests
 
@@ -61,14 +62,14 @@ print(response.json())
 
 ---  
 
-### **3. Параметры API (в зависимости от сервера)**  
+#### **3. Параметры API (в зависимости от сервера)**  
 - **LM Studio** использует OpenAI-совместимый API (`/v1/completions` или `/v1/chat/completions`).  
 - **Ollama** имеет свой формат (`/api/generate`).  
 - **Text Generation Inference (TGI)** от Hugging Face поддерживает `/generate` и `/generate_stream`.  
 
 ---  
 
-### **4. Пример для Ollama API**  
+#### **4. Пример для Ollama API**  
 ```python
 import requests
 
@@ -85,7 +86,7 @@ print(response.json()["response"])
 
 ---  
 
-### **5. Если сервер требует токен**  
+#### **5. Если сервер требует токен**  
 Некоторые локальные серверы (например, **FastChat**) могут использовать фиктивный токен. В таком случае добавьте заголовок:  
 ```python
 headers = {"Authorization": "Bearer no-token"}  # Фиктивный токен
@@ -94,7 +95,7 @@ response = requests.post(url, json=payload, headers=headers)
 
 ---  
 
-### **Вывод**  
+#### **Вывод**  
 1. Убедитесь, что локальная модель запущена.  
 2. Проверьте URL API (зависит от инструмента).  
 3. Отправляйте запросы без токена (или с фиктивным, если требуется).  

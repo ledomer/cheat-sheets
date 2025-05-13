@@ -21,4 +21,5 @@
          2. [Консьюмер 2](programming/golang/unsorted/consumer_002.md)
          3. [Консьюмер 3](programming/golang/unsorted/consumer_003.md)
          4. [Консьюмер 4](programming/golang/unsorted/consumer_004.md)
-         5. [Продюсер](programming/golang/unsorted/producer.md)
+         5. [Консьюмер. Перечитать сообщение в случае ошибки](programming/golang/unsorted/consumer_005.md)
+         6. [Продюсер](programming/golang/unsorted/producer.md)

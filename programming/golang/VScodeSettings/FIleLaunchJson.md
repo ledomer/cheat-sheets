@@ -26,7 +26,7 @@
             "program": "${workspaceFolder}/cmd/app/",
             "env": {
                 "PKG_CONFIG_PATH": "C:/Progs/librdkafka\bin",
-                "API_AUTHO0RIZATION": "Basic ZGV2ZWw6bGdkZXZwYXNz",
+                "API_AUTHO0RIZATION": "Basic XXXXXXXXXXXXXXXXXX",
                 "CGO_ENABLED": "1",
                 "CC": "gcc.exe",
                 "HTTP_PROXY": "",
@@ -42,7 +42,7 @@
             "console": "integratedTerminal",
             "program": "${workspaceFolder}/cmd/api/",
             "env": {
-                "API_AUTHORIZATION": "Basic ZGV2ZWw6bGdkZXZwYXNz",
+                "API_AUTHORIZATION": "Basic XXXXXXXXXXXXXXXXXX",
                 "CGO_ENABLED": "1",
                 "CC": "gcc.exe",
                 "HTTP_PROXY": "",
